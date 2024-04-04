@@ -38,7 +38,7 @@ const Register = () => {
     value: website,
   }));
   return (
-    <div >
+    <div style={{ background: "#278664 ", display: 'flex', alignItems: 'center', height: '100vh' }}>
       <Form
       
         form={form}
@@ -49,11 +49,11 @@ const Register = () => {
         }}
         style={{
 
-          paddingInline: '28px',
-          paddingBlock: "20px",
+          paddingInline: '2vw',
+          paddingBlock: "4vh",
           backgroundColor: 'white',
-          borderRadius: '50px',
-          marginLeft: '15vh'
+          borderRadius: '2vw',
+          margin:"10vw"
 
         }}
         scrollToFirstError
