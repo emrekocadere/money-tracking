@@ -11,7 +11,8 @@ import {
     Select,
 } from 'antd';
 import { useState } from 'react';
-
+import { Typography } from "antd";
+const { Title } = Typography;       
 
 const { Option } = Select;
 
@@ -51,6 +52,7 @@ const Login = () => {
 
                     paddingInline: '2vw',
                     paddingBlock: "4vh",
+                    paddingTop:"1vh",
                     backgroundColor: 'white',
                     borderRadius: '2vw',
                     margin: "10vw"
@@ -59,7 +61,7 @@ const Login = () => {
                 scrollToFirstError
             >
 
-
+                <Title level={2} style={{marginBottom:"4vh", display:"flex",justifyContent:"center"}}>Login</Title>
                 <Form.Item
                     name="username"
                     label="Username"
