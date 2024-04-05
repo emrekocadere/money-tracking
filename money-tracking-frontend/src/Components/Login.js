@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import { useState } from 'react';
 import { Typography } from "antd";
-const { Title } = Typography;       
+const { Title } = Typography;
 
 const { Option } = Select;
 
@@ -25,7 +25,7 @@ const Login = () => {
 
     };
 
-//278664
+    //278664
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     const onWebsiteChange = (value) => {
         if (!value) {
@@ -39,71 +39,87 @@ const Login = () => {
         value: website,
     }));
     return (
-        <div style={{ background: "#f2f2f2 ", display: 'flex', alignItems: 'center', height: '100vh' }}>
-            <Form
+        <div style={{ background: "#f2f2f2 ", display: 'flex', height: '100vh', alignItems: "center" }}>
+            <div style={{
 
-                form={form}
-                name="register"
-                onFinish={onFinish}
-                initialValues={{
-                    prefix: '+90',
-                }}
-                style={{
 
-                    paddingInline: '2vw',
-                    paddingBlock: "4vh",
-                    paddingTop:"1vh",
-                    backgroundColor: 'white',
-                    borderRadius: '2vw',
-                    margin: "10vw"
+                marginLeft: "10vw",
+                backgroundColor: 'white',
+                borderRadius: '2vw',
 
-                }}
-                scrollToFirstError
-            >
+            }}>
+                <Title level={2} style={{
+                    display: "flex", justifyContent: "center",
+                    color: "white", background: "#278664",
+                    margin: "0px", borderTopLeftRadius: '2vw',
+                    borderTopRightRadius: '2vw',height:"7vh",
+                    alignItems:"center",justifyContent:"center"
+                    
+                }}>
+                    Login
+                </Title>
 
-                <Title level={2} style={{marginBottom:"4vh", display:"flex",justifyContent:"center",color:"white",background:"#278664"}}>Login</Title>
-                <Form.Item
-                    name="username"
-                    label="Username"
-                    tooltip="What do you want others to call you?"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your nickname!',
-                            whitespace: true,
-                        },
-                    ]}
+                <Form
+
+                    form={form}
+                    name="register"
+                    onFinish={onFinish}
+                    initialValues={{
+                        prefix: '+90',
+                    }}
+                    style={{
+                        padding:"10vh"
+
+                    }}
+                    scrollToFirstError
                 >
-                    <Input />
-                </Form.Item>
+
+
+                    <Form.Item
+                        name="username"
+                        label="Username"
+                        tooltip="What do you want others to call you?"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your nickname!',
+                                whitespace: true,
+                            },
+                        ]}
+                    >
+                        <Input />
+                    </Form.Item>
 
 
 
-                <Form.Item
-                    name="password"
-                    label="Password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your password!',
-                        },
-                    ]}
-                    hasFeedback
-                >
-                    <Input.Password />
-                </Form.Item>
-
-               
-
-                <Form.Item >
-                    <Button type="primary" htmlType="submit" style={{background:"#278664"}}>
-                        Login
-                    </Button>
-                    <a style={{color:"#278664"}}>Continue Without Acoount</a>
-                </Form.Item>
+                    <Form.Item
+                        name="password"
+                        label="Password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your password!',
+                            },
+                        ]}
+                        hasFeedback
+                    >
+                        <Input.Password />
+                    </Form.Item>
 
 
-            </Form>
+
+                    <Form.Item >
+                        <Button type="primary" htmlType="submit" style={{ background: "#278664" }}>
+                            Login
+                        </Button>
+                        <a style={{ color: "#278664" }}>Continue Without Acoount</a>
+                    </Form.Item>
+
+
+                </Form>
+            </div>
+
+
         </div>
     );
 };
