@@ -9,39 +9,37 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const Profile = () => {
     const [profile, setProfile] = useState({});//nedir bu
-   
+
 
     let items = [
 
         {
 
             label: 'Username',
-            children: profile.Username,
+            children: "emrekocadere34",
+            span:3
         },
 
         {
 
             label: 'Telephone',
-            children: profile.PhoneNumber,
+            children: "05523119091",
+            span:3
         },
         {
 
             label: 'Email',
-            children: profile.email,
+            children: "emrekocere@gmail.com",
+           
         },
     ];
 
     return (
-        
+        <div style={{width:"15vw",background:"red"}}>
+            <Descriptions colon="false" items={items} />
+        </div>
 
-            <div >
-                <Content>
-                    <Avatar size={128} icon={<UserOutlined />} style={{ marginBottom: "50px" }} />
-                    <Descriptions items={items} />
 
-                </Content>
-            </div>
-    
 
 
     );
