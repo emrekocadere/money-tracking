@@ -35,8 +35,10 @@ const Profile = () => {
     ];
 
     return (
-        <div style={{width:"15vw",background:"red"}}>
-            <Descriptions colon="false" items={items} />
+        <div style={{display:"flex",width:"40vw",justifyContent:"space-around"}}>
+            <Avatar size={128} icon={<UserOutlined />}  />    
+            <Descriptions colon="false" items={items} style={{width:"20vw"}}/>
+       
         </div>
 
 
