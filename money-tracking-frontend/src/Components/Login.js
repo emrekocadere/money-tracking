@@ -25,7 +25,7 @@ const Login = () => {
 
     };
 
-
+//278664
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     const onWebsiteChange = (value) => {
         if (!value) {
@@ -39,7 +39,7 @@ const Login = () => {
         value: website,
     }));
     return (
-        <div style={{ background: "#278664 ", display: 'flex', alignItems: 'center', height: '100vh' }}>
+        <div style={{ background: "#f2f2f2 ", display: 'flex', alignItems: 'center', height: '100vh' }}>
             <Form
 
                 form={form}
@@ -61,7 +61,7 @@ const Login = () => {
                 scrollToFirstError
             >
 
-                <Title level={2} style={{marginBottom:"4vh", display:"flex",justifyContent:"center"}}>Login</Title>
+                <Title level={2} style={{marginBottom:"4vh", display:"flex",justifyContent:"center",color:"white",background:"#278664"}}>Login</Title>
                 <Form.Item
                     name="username"
                     label="Username"
@@ -96,9 +96,10 @@ const Login = () => {
                
 
                 <Form.Item >
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" style={{background:"#278664"}}>
                         Login
                     </Button>
+                    <a style={{color:"#278664"}}>Continue Without Acoount</a>
                 </Form.Item>
 
 
