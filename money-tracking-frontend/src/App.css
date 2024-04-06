@@ -12,6 +12,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.LoginRegisterCard{
+
+  margin-left: 10vw;
+  background-color: white;
+  border-radius: 2vw;
+}
+
 
 .App-header {
   background-color: #282c34;
