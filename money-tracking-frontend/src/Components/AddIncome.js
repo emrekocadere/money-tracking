@@ -4,7 +4,7 @@ import { Button, Modal } from 'antd';
 import { Form, Input, InputNumber } from 'antd';
 
 
-
+// buraya full mantığına bak akışa bak.
 const AddIncome =({ onAddIncome }) => {
     const [loading, setLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +28,7 @@ const AddIncome =({ onAddIncome }) => {
         <div>
 
 
-            <Button type="primary" htmlType="submit" onClick={showModal}>
+            <Button type="primary" htmlType="submit" onClick={showModal} style={{background:"#278664"}}>
                 Open Modal
             </Button>
 
@@ -57,7 +57,7 @@ const AddIncome =({ onAddIncome }) => {
 
 
                 <Form.Item >
-                    <Button type="primary" htmlType="submit"  >
+                    <Button type="primary" htmlType="submit" style={{background:"#278664"}} >
                         Submit
                     </Button>
                 </Form.Item>
