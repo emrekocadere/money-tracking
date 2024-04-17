@@ -19,7 +19,14 @@ const { Option } = Select;
 
 const Login = () => {
 
+    const [form] = Form.useForm();//buna bak ant designın default kodu mu
 
+    const onFinish = async (values) => {
+        console.log('Received values of form: ', values);
+
+    };
+
+        //animation
     const ref = useRef([]);
     const [items, set] = useState([]);
     const transitions = useTransition(items, {
@@ -52,14 +59,8 @@ const Login = () => {
         return () => ref.current.forEach(clearTimeout)
     }, [])
 
-    const [form] = Form.useForm();//buna bak ant designın default kodu mu
+ 
 
-    const onFinish = async (values) => {
-        console.log('Received values of form: ', values);
-
-    };
-
-    //278664
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     const onWebsiteChange = (value) => {
         if (!value) {
@@ -72,6 +73,9 @@ const Login = () => {
         label: website,
         value: website,
     }));
+
+    //animation
+
     return (
         <div style={{ background: "#f2f2f2 ", display: 'flex', height: '100vh', alignItems: "center" }}>
             <div className="LoginRegisterCard">
