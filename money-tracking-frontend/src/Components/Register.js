@@ -10,6 +10,7 @@ import {
   Row,
   Select,
 } from 'antd';
+
 import { useState } from 'react';
 
 
@@ -17,7 +18,7 @@ const { Option } = Select;
 
 
 const Register = () => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm();//buna bak ant designın default kodu mu
 
   const onFinish = async (values) => {
     console.log('Received values of form: ', values);
