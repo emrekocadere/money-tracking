@@ -28,7 +28,9 @@ const NavigationBar = () => {
                 components: {
                     Menu: {
                         itemHoverBg:"#278664",
-                        itemHoverColor:"white"
+                        itemHoverColor:"white",
+                        itemSelectedColor:"white",
+                        itemSelectedBg:"#278664"
                     },
                 },
             }}
