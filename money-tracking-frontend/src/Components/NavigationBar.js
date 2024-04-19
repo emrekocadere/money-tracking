@@ -1,5 +1,7 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom';
+import { Button, ConfigProvider, Space } from 'antd';
 function getItem(label, key, icon, children, type) {
     return {
         key,
@@ -11,8 +13,6 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
     getItem(<Link to="/Dashboard">Dashboard</Link>, "genel"),
-    getItem(<Link to="/income">Incomes</Link>, "girdiler"),
-    getItem(<Link to="/expenses">Expenses</Link>, "çıktılar"),
     getItem(<Link to="/Profile">last 1 month</Link>, "1ay"),
     getItem(<Link to="/Profile">Profil</Link>, "profil"),
     getItem(<Link to="/Profile">Settings</Link>, "ayarlar"),
@@ -23,16 +23,28 @@ const NavigationBar = () => {
         console.log('click ', e);
     };
     return (
-        <Menu
-            onClick={onClick}
-            style={{
-                width: 250,
-                height:500
+        <ConfigProvider
+            theme={{
+                components: {
+                    Menu: {
+                        itemHoverBg:"#278664",
+                        itemHoverColor:"white"
+                    },
+                },
             }}
-            SelectedKeys={['çıktılar']}
-            mode="inline"
-            items={items}
-        />
+        >
+            <Menu
+                onClick={onClick}
+                style={{
+                    width: 250,
+                    height: "100vh"
+                }}
+                SelectedKeys={['çıktılar']}
+                mode="vertical"
+                items={items}
+            />
+        </ConfigProvider>
+
     );
 };
 export default NavigationBar;
