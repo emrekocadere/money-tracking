@@ -1,7 +1,7 @@
 import React from 'react';
-import CustomNavigation from './Navigation';
-import Cookies from 'js-cookie';
-import Garaphic from './Graphic';
+import CustomNavigation from './NavigationBar';
+
+
 import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
@@ -86,20 +86,26 @@ const data = [
     age: 32,
     address: 'London No. 2 Lake Park',
   },
+  {
+    key: '5',
+    name: 'Jim Red',
+    age: 32,
+    address: 'London No. 2 Lake Park',
+  }
 ];
 const onChange = (pagination, filters, sorter, extra) => {
   console.log('params', pagination, filters, sorter, extra);
 };
-const Incomes = () =>
+const Dashboard = () =>
   {
     
     
   return (
   <div style={{ display: 'flex' }}>
 
-    <CustomNavigation></CustomNavigation>
+    <CustomNavigation/>
     <Content>
-    <Garaphic/>
+    
       <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
       
     </Content>
@@ -109,4 +115,4 @@ const Incomes = () =>
 
 };
 
-export default Incomes;
+export default Dashboard;
