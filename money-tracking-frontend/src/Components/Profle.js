@@ -40,7 +40,7 @@ const Profile = () => {
         <div style={{display:"flex"}}>
             
             <NavigationBar></NavigationBar>
-            <div style={{ display: "flex", width: "40vw", justifyContent: "space-around" }}>
+            <div style={{ display: "flex", width: "40vw", justifyContent: "space-around",marginLeft:"8vw",marginTop:"10vh" }}>
                 <Avatar size={128} icon={<UserOutlined />} />
                 <Descriptions colon="false" items={items} style={{ width: "20vw" }} />
             </div>
