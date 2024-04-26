@@ -4,6 +4,7 @@ import { Col, Row, Statistic } from 'antd';
 import CountUp from 'react-countup';
 import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
+import DemoPie from './PiePlot';
 const formatter = (value) => <CountUp end={value} separator="," />;
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
@@ -105,6 +106,7 @@ const Dashboard = () => {
 
       <CustomNavigation />
       <Content>
+        <DemoPie/>
         <Row gutter={16}>
           <Col span={12}>
             <Statistic title="Active Users" value={112893} formatter={formatter} />
