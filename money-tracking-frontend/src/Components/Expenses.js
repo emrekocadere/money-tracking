@@ -1,17 +1,14 @@
 import React from 'react';
-import CustomNavigation from './Navigation';
-import AddExpense from './AddExpense';
+import CustomNavigation from './NavigationBar';
+
+
 import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
-
-
 const { Header, Footer, Sider, Content } = Layout;
-
-
 const columns = [
   {
     title: 'expenses',
-    dataIndex: 'newBalance',
+    dataIndex: 'name',
     filters: [
       {
         text: 'Joe',
@@ -23,22 +20,34 @@ const columns = [
       },
       {
         text: 'Submenu',
-        value: 'Submenu'
+        value: 'Submenu',
+        children: [
+          {
+            text: 'Green',
+            value: 'Green',
+          },
+          {
+            text: 'Black',
+            value: 'Black',
+          },
+        ],
       },
     ],
-
+    // specify the condition of filtering result
+    // here is that finding the name started with `value`
     onFilter: (value, record) => record.name.indexOf(value) === 0,
     sorter: (a, b) => a.name.length - b.name.length,
     sortDirections: ['descend'],
   },
   {
     title: 'Amount',
-    dataIndex: 'amount',
-    sorter: (a, b) => a.age - b.age
+    dataIndex: 'age',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => a.age - b.age,
   },
   {
     title: 'descriptions',
-    dataIndex: 'description',
+    dataIndex: 'address',
     filters: [
       {
         text: 'London',
@@ -52,35 +61,58 @@ const columns = [
     onFilter: (value, record) => record.address.indexOf(value) === 0,
   },
 ];
-
-
-
+const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sydney No. 1 Lake Park',
+  },
+  {
+    key: '4',
+    name: 'Jim Red',
+    age: 32,
+    address: 'London No. 2 Lake Park',
+  },
+  {
+    key: '5',
+    name: 'Jim Red',
+    age: 32,
+    address: 'London No. 2 Lake Park',
+  }
+];
 const onChange = (pagination, filters, sorter, extra) => {
   console.log('params', pagination, filters, sorter, extra);
 };
-
-
-const Expenses = () => {
-
-
-  
-
+const Expenses = () =>
+  {
+    
+    
   return (
+  <div style={{ display: 'flex' }}>
 
-    <div style={{ display: 'flex' }}>
+    <CustomNavigation/>
+    <Content>
+    
+      <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
+      
+    </Content>
 
-      <CustomNavigation></CustomNavigation>
-      <Content>
-        <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
-        <AddExpense onAddExpense={handleRefreshExpenses}/>
-      </Content>
+  </div>
+);
 
-    </div>
-
-  );
-}
-
+};
 
 export default Expenses;
-
-
