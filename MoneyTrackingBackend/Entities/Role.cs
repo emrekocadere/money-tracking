@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MoneyTrackingBackend.Entities
 {
-	public class Role:IdentityRole
+	public class Role:IdentityRole<int>
 	{
 
 	}
