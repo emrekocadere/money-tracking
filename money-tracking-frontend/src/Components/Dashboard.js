@@ -6,64 +6,29 @@ import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
 import PieChart from "./PieChart";
 import AddingTransactionModal from './AddingTransactionModal';
+import Title from 'antd/es/typography/Title';
 const formatter = (value) => <CountUp end={value} separator="," />;
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
   {
     title: 'expenses',
     dataIndex: 'name',
-    filters: [
-      {
-        text: 'Joe',
-        value: 'Joe',
-      },
-      {
-        text: 'Jim',
-        value: 'Jim',
-      },
-      {
-        text: 'Submenu',
-        value: 'Submenu',
-        children: [
-          {
-            text: 'Green',
-            value: 'Green',
-          },
-          {
-            text: 'Black',
-            value: 'Black',
-          },
-        ],
-      },
-    ],
-    // specify the condition of filtering result
-    // here is that finding the name started with `value`
-    onFilter: (value, record) => record.name.indexOf(value) === 0,
-    sorter: (a, b) => a.name.length - b.name.length,
-    sortDirections: ['descend'],
+
+
+
   },
   {
     title: 'Amount',
     dataIndex: 'age',
-    defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
+
   },
   {
     title: 'descriptions',
     dataIndex: 'address',
-    filters: [
-      {
-        text: 'London',
-        value: 'London',
-      },
-      {
-        text: 'New York',
-        value: 'New York',
-      },
-    ],
-    onFilter: (value, record) => record.address.indexOf(value) === 0,
+
   },
 ];
+
 const data = [
   {
     key: '1',
@@ -114,20 +79,24 @@ const Dashboard = () => {
             </Col>
  
        
-          <Col span={6}>
-            <Statistic title="Active Users" value={112893} formatter={formatter} s />
+          <Col span={3}  style={{marginTop:"7vh"}}>
+            <Statistic title="Total Expense this month" value={112893} formatter={formatter} s />
           </Col>
-          <Col span={6}>
-            <Statistic title="Account Balance (CNY)" value={112893} precision={2} formatter={formatter} />
+          
+          <Col span={3} style={{marginTop:"7vh"}}>
+            <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
           </Col>
+          <Col span={3}  style={{marginTop:"7vh"}}>
+            <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
+          </Col>
+        
+
           </Row>
         </div>
-
-
-       
-        <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
+        <Title level={5}>last transactions</Title>
+        <Table columns={columns} dataSource={data} pagination={false} size="medium" />
       </Content>
-      
+
     </div>
   );
 
