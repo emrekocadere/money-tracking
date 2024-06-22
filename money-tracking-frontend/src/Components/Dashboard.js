@@ -4,7 +4,7 @@ import { Col, Row, Statistic } from 'antd';
 import CountUp from 'react-countup';
 import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
-
+import PieChart from "./PieChart";
 const formatter = (value) => <CountUp end={value} separator="," />;
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
@@ -105,20 +105,29 @@ const Dashboard = () => {
     <div style={{ display: 'flex' }}>
 
       <CustomNavigation />
-    <Content>
-
+      <Content>
+        <div style={{}}>
+           <Row >
+            <Col span={12}> 
+            <PieChart/>
+            </Col>
+ 
        
-        <Row gutter={16}>
-          <Col span={12}>
-            <Statistic title="Active Users" value={112893} formatter={formatter}  s/>
+          <Col span={6}>
+            <Statistic title="Active Users" value={112893} formatter={formatter} s />
           </Col>
-          <Col span={12}>
+          <Col span={6}>
             <Statistic title="Account Balance (CNY)" value={112893} precision={2} formatter={formatter} />
           </Col>
-        </Row>
+          </Row>
+        </div>
+
+
+
+       
         <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
-        </Content>
-   
+      </Content>
+
 
     </div>
   );
