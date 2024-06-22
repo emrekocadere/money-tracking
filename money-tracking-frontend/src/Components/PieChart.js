@@ -20,8 +20,8 @@ export default function PieChart() {
       chartType="PieChart"
       data={data}
       options={options}
-      width={"100%"}
-      height={"400px"}
+    
+      height={"45vh"}
     />
   );
 }
