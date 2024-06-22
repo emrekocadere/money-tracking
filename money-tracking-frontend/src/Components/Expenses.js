@@ -1,9 +1,9 @@
 import React from 'react';
 import CustomNavigation from './NavigationBar';
-
-
+import AddingTransactionModal from './AddingTransactionModal';
+import LineChart from "./LineChart";
 import { Table } from 'antd';
-import { Layout, Flex } from 'antd';
+import { Layout, Flex , Col, Row} from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
   {
@@ -105,9 +105,20 @@ const Expenses = () =>
 
     <CustomNavigation/>
     <Content>
-    
+    <Row>
+
+
+    <Col span={12}>
+    <LineChart></LineChart>
+      </Col>
+      <Col span={12}>
       <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
-      
+      </Col>
+
+
+
+    </Row>
+
     </Content>
 
   </div>
