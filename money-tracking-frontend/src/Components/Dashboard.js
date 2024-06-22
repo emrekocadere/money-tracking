@@ -105,7 +105,7 @@ const Dashboard = () => {
     <div style={{ display: 'flex' }}>
 
       <CustomNavigation />
-      <Content>
+    
         <DemoPie/>
         <Row gutter={16}>
           <Col span={12}>
@@ -117,7 +117,7 @@ const Dashboard = () => {
         </Row>
         <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
 
-      </Content>
+   
 
     </div>
   );
