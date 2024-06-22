@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { Table } from 'antd';
 import { Layout, Flex } from 'antd';
 import PieChart from "./PieChart";
+import AddingTransactionModal from './AddingTransactionModal';
 const formatter = (value) => <CountUp end={value} separator="," />;
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
@@ -123,12 +124,10 @@ const Dashboard = () => {
         </div>
 
 
-
        
         <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
       </Content>
-
-
+      
     </div>
   );
 
