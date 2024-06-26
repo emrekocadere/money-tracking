@@ -9,6 +9,8 @@ namespace MoneyTrackingBackend.Entities
         public string Description { get; set; }
         public User User { get; set; }
         public int UserId { get; set; }
+        public TransactionType TransactionType { get; set; }
+        public TransactionType TransactionTypeId { get; set; }
     }
 }
 
