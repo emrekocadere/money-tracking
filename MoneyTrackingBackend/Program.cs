@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MoneyTrackingDbContext>
-    (options => options.UseNpgsql(builder.Configuration.GetConnectionString("ConnectionString")));
+    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
 builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<MoneyTrackingDbContext>();
 
 
