@@ -15,7 +15,7 @@ const items = [
     getItem(<Link to="/Dashboard">Dashboard</Link>, "genel"),
     getItem(<Link to="/Profile">last 1 month</Link>, "1ay"),
     getItem(<Link to="/Profile">Profil</Link>, "profil"),
-    getItem(<Link to="/Profile">Settings</Link>, "ayarlar"),
+    getItem(<Link to="/Settings">Settings</Link>, "ayarlar"),
     getItem(<Link to="/Profile">Exit</Link>, "çıkış"),
 ];
 const NavigationBar = () => {
@@ -38,7 +38,7 @@ const NavigationBar = () => {
             <Menu
                 onClick={onClick}
                 style={{
-                    width: 250,
+                    width: "15vw",
                     height: "100vh"
                 }}
                 SelectedKeys={['çıktılar']}

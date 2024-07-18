@@ -68,7 +68,7 @@ const Dashboard = () => {
 
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex'}}>
 
       <CustomNavigation />
       <Content>
