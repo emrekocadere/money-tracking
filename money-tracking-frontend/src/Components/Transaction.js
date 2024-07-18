@@ -5,6 +5,7 @@ import { Button } from 'antd';
 import LineChart from "./LineChart";
 import { Table } from 'antd';
 import { Layout, Flex, Col, Row } from 'antd';
+import PieChart from './PieChart';
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
     {
@@ -108,16 +109,30 @@ const Transaction = () => {
                 <Row>
 
 
-                    <Col span={12}>
-                        <LineChart></LineChart>
-                        <Button type="text" danger>
-                            Graph
-                        </Button>
-                        <Button type="text" danger>
-                            Ratios
-                        </Button>
+                    <Col span={24} >
+                    <div>
+
+                   
+                        <div style={{ display: 'flex' }}>
+                        <PieChart />
+                            <LineChart />
+                           
+                        </div>
+                        <div>
+                            <Button type="text" danger>
+                                Graph
+                            </Button>
+                            <Button type="text" danger>
+                                Ratios
+                            </Button>
+                        </div>
+                        </div>
                     </Col>
-                    <Col span={12}>
+
+
+
+
+                    <Col span={24}>
                         <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
                         <Button type="text" danger>
                             Expand
