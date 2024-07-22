@@ -7,6 +7,7 @@ import { Layout, Flex } from 'antd';
 import PieChart from "./PieChart";
 import AddingTransactionModal from './AddingTransactionModal';
 import Title from 'antd/es/typography/Title';
+import CustomFooter from "./Footer"
 const formatter = (value) => <CountUp end={value} separator="," />;
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
@@ -68,34 +69,39 @@ const Dashboard = () => {
 
 
   return (
-    <div style={{ display: 'flex'}}>
+    <div >
+      <div style={{ display: 'flex' }}>
+        <CustomNavigation />
+        <Content>
+          <div style={{}}>
+            <Row >
+              <Col span={12}>
+                <PieChart />
+              </Col>
 
-      <CustomNavigation />
-      <Content>
-        <div style={{}}>
-           <Row >
-            <Col span={12}> 
-            <PieChart/>
-            </Col>
- 
-       
-          <Col span={3}  style={{marginTop:"7vh"}}>
-            <Statistic title="Total Expense this month" value={112893} formatter={formatter} s />
-          </Col>
-          
-          <Col span={3} style={{marginTop:"7vh"}}>
-            <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
-          </Col>
-          <Col span={3}  style={{marginTop:"7vh"}}>
-            <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
-          </Col>
-        
 
-          </Row>
-        </div>
-        <Title level={5}>last transactions</Title>
-        <Table columns={columns} dataSource={data} pagination={false} size="medium" />
-      </Content>
+              <Col span={3} style={{ marginTop: "7vh" }}>
+                <Statistic title="Total Expense this month" value={112893} formatter={formatter} s />
+              </Col>
+
+              <Col span={3} style={{ marginTop: "7vh" }}>
+                <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
+              </Col>
+              <Col span={3} style={{ marginTop: "7vh" }}>
+                <Statistic title="Total Income this month" value={112893} precision={2} formatter={formatter} />
+              </Col>
+
+
+            </Row>
+          </div>
+          <Title level={5}>last transactions</Title>
+          <Table columns={columns} dataSource={data} pagination={false} size="medium" />
+        </Content>
+      </div>
+
+    
+        <CustomFooter/>
+
 
     </div>
   );
