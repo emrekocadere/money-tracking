@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
     "@ant-design/plots": "^2.2.1",
     "@nextui-org/button": "^2.0.34",
     "@nextui-org/modal": "^2.0.36",
