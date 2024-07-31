@@ -1,11 +1,12 @@
 import React from 'react';
 import CustomNavigation from './NavigationBar';
 import AddingTransactionModal from './AddingTransactionModal';
-import { Button } from 'antd';
+import { Button, Radio  } from 'antd';
 import LineChart from "./LineChart";
 import { Table } from 'antd';
 import { Layout, Flex, Col, Row } from 'antd';
 import PieChart from './PieChart';
+
 const { Header, Footer, Sider, Content } = Layout;
 const columns = [
     {
@@ -106,33 +107,33 @@ const Transaction = () => {
 
             <CustomNavigation />
             <Content>
+            <Flex vertical gap="middle">
+    <Radio.Group defaultValue="a" buttonStyle="solid">
+      <Radio.Button value="a">Hangzhou</Radio.Button>
+      <Radio.Button value="b">Shanghai</Radio.Button>
+      <Radio.Button value="c">Beijing</Radio.Button>
+      <Radio.Button value="d">Chengdu</Radio.Button>
+    </Radio.Group>
+    </Flex>
                 <Row>
-
-
                     <Col span={24} >
-                    <div>
+                        <Row>
+                            <Col span={10}>
+                                <PieChart />
+                            </Col>
+                            <Col span={14}>
+                                <LineChart />
+                            </Col>
 
-                   
-                        <div style={{ display: 'flex' }}>
-                        <PieChart />
-                            <LineChart />
-                           
-                        </div>
-                        <div>
-                            <Button type="text" danger>
-                                Graph
-                            </Button>
-                            <Button type="text" danger>
-                                Ratios
-                            </Button>
-                        </div>
-                        </div>
+                        </Row>
                     </Col>
 
+                    
+                </Row>
 
+                <Row>
 
-
-                    <Col span={24}>
+                <Col span={24}>
                         <Table columns={columns} dataSource={data} onChange={onChange} style={{ boxSizing: "content-box" }} />
                         <Button type="text" danger>
                             Expand
